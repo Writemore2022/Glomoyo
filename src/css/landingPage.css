@@ -1,0 +1,144 @@
+.landing-wrap {
+    width: 700px;
+    height: 1200px;
+    background-color: aqua;
+}
+
+.landing-wrap>.landing-area{
+    width: 100%;
+    background-color: lightyellow;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/*bubble-area*/
+.landing-wrap>#bubble-area{
+    height: 250px;
+    padding-top: 30px;
+    box-sizing: border-box;
+}
+
+/*bubble 클래스로 bubble-cont1과 bubble-cont2의 공통 부분 묶음*/
+.landing-wrap>#bubble-area>.bubble{
+    width: 510px;
+    height: 75px;
+    padding: 0px;
+    background: #FFFFFF;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    border: orange solid 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.landing-wrap>#bubble-area>.bubble::after{
+    content: '';
+    border-style: solid;
+    border-color: transparent #FFFFFF;
+    display: block;
+    width: 0;
+    z-index: 1;
+    top: 46px;
+}
+
+.landing-wrap>#bubble-area>.bubble::before{
+    content: '';
+    border-style: solid;
+    border-color: transparent #FF751C;
+    display: block;
+    width: 0;
+    z-index: 0;
+    top: 45px;
+}
+
+.landing-wrap>#bubble-area>#bubble-cont1{
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.landing-wrap>#bubble-area>#bubble-cont1::after{
+    position: absolute;
+    border-width: 7px 40px 7px 0;
+    left: -40px;
+}
+
+.landing-wrap>#bubble-area>#bubble-cont1::before{
+    position: absolute;
+    border-width: 8px 41px 8px 0;
+    left: -43px;
+}
+
+.landing-wrap>#bubble-area>#bubble-cont2{
+    position: relative;
+}
+
+.landing-wrap>#bubble-area>#bubble-cont2::after{
+    position: absolute;
+    border-width: 7px 0 7px 40px;
+    right: -40px;
+}
+
+.landing-wrap>#bubble-area>#bubble-cont2::before{
+    position: absolute;
+    border-width: 8px 0 8px 41px;
+    right: -43px;
+}
+
+/*contents-area*/
+.landing-wrap>#contents-area{
+    height: 450px;
+    
+}
+
+.landing-wrap>#contents-area>.cont{
+    /* background-color: lightpink; */
+    margin-bottom: 25px;
+    box-sizing: border-box;
+    line-height: 2;
+}
+
+.landing-wrap>#contents-area>#cont1{
+    height: 60px;
+    padding-top: 15px;
+}
+
+.landing-wrap>#contents-area>#cont2{
+    height: 190px;
+    padding-top: 40px;
+}
+
+.landing-wrap>#contents-area>#cont2 b{
+    color: orange;
+}
+
+.landing-wrap>#contents-area>#cont2>#logo-area{
+    position: relative;
+}
+
+.landing-wrap>#contents-area>#cont2>#logo-area>#logo-img{
+    width: 280px;
+    height: 80px;
+    /* background-color: limegreen; */
+    float: left;
+    padding-left: 160px;
+}
+
+.landing-wrap>#contents-area>#cont2>#logo-area>span{
+    position: absolute;
+    top: 50px;
+    left: 445px;
+}
+
+.landing-wrap>#contents-area>#cont3{
+    height: 130px;
+    padding-top: 20px;
+}
+
+
+
+/*input-area*/
+.landing-wrap>#input-area{
+    height: 450px;
+}
