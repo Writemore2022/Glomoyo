@@ -4,13 +4,13 @@
 
 .landing-wrap {
     width: 700px;
-    height: 1200px;
-    background-color: aqua;
+    height: 1100px;
+    /* background-color: aqua; */
 }
 
 .landing-wrap>.landing-area{
     width: 100%;
-    background-color: lightyellow;
+    /* background-color: lightyellow; */
     margin-bottom: 20px;
     text-align: center;
 }
@@ -144,7 +144,7 @@
 
 /*input-area*/
 .landing-wrap>#info-area{
-    height: 450px;
+    height: 300px;
 }
 
 .landing-wrap>#info-area>#info-top{

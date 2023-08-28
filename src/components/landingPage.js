@@ -2,9 +2,9 @@
 import "../css/landingPage.css"
 import Logo from "../assets/images/logo2.png"
 import SelectPage from "../components/select.js";
+import { useState } from "react";
 
 function Landing() {
-
 
     const genderData = [
             { value: "남자", label: "남자" },
@@ -25,6 +25,38 @@ function Landing() {
     const clickedBtn = () => {
         alert("You clicked button!");
     }
+
+    /* 수정 필요! (230828)
+    // 입력 값 확인
+    const [state, setState] = useState({
+        gender: "",
+        age: "",
+        nickname: "",
+        info: "",
+        email: "",
+    });
+
+    const onSubmitData = (data) => {
+        setState(data);
+        console.log(state);
+      };
+
+    // 초기값 세팅
+    const [gender, setGender] = useState("");
+    const [age, setAge] = useState("");
+    const [nickname, setNickname] = useState("");
+    const [info, setInfo] = useState("");
+    const [email, setEmail] = useState("");
+
+    const onChangeNickname = (e) => {
+        const currentNickname = e.target.value;
+        setNickname(currentNickname);
+    }
+
+    const onChangeEmail = (e) => {
+        const currentEmail = e.target.value;
+        setEmail(currentEmail);
+    }*/
 
     return (
       <div className="landing-wrap">
@@ -67,7 +99,7 @@ function Landing() {
                 <input placeholder="닉네임을 입력하세요." id="nickname" className="info-box"/>
             </div>
             <input placeholder="정보를 입력하세요." id="contents" className="info-input"/>
-            <input placeholder="이메일을 입력하세요." id="email" className="info-input"/>
+            <input placeholder="이메일을 입력하세요." id="email" className="info-input" />
             <button type="submit" id="submit-btn" className="info-box" onClick={clickedBtn}> 제출 </button>
 
         </div>
