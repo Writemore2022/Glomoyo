@@ -1,3 +1,7 @@
+*{
+    font-size: 14px;
+}
+
 .landing-wrap {
     width: 700px;
     height: 1200px;
@@ -139,6 +143,36 @@
 
 
 /*input-area*/
-.landing-wrap>#input-area{
+.landing-wrap>#info-area{
     height: 450px;
 }
+
+.landing-wrap>#info-area>#info-top{
+    display: flex;
+    flex: space-between;
+    padding: 20px;
+}
+
+.landing-wrap>#info-area>.info-input {
+    width: 630px;
+    height: 35px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1.5px solid rgb(187, 184, 184);
+}
+
+.landing-wrap>#info-area .info-box{
+    width: 200px;
+    height: 35px;
+    border-radius: 5px;
+    border: 1.5px solid rgb(187, 184, 184);
+}
+
+.landing-wrap>#info-area>#submit-btn{
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: orange;
+    box-shadow: 3px 3px 3px lightgray;
+}
+
+

@@ -4,6 +4,28 @@ import Logo from "../assets/images/logo2.png"
 import SelectPage from "../components/select.js";
 
 function Landing() {
+
+
+    const genderData = [
+            { value: "남자", label: "남자" },
+            { value: "여자", label: "여자" },
+            { value: "비공개", label: "비공개" }
+    ];
+
+    const ageData = [
+        { value: "10대", label: "10대" },
+        { value: "20대", label: "20대" },
+        { value: "30대", label: "30대" },
+        { value: "40대", label: "40대" },
+        { value: "50대", label: "50대" },
+        { value: "60대", label: "60대" },
+        { value: "70대 이상", label: "70대 이상" }
+    ];
+
+    const clickedBtn = () => {
+        alert("You clicked button!");
+    }
+
     return (
       <div className="landing-wrap">
         <div id="bubble-area" className="landing-area"> 
@@ -30,24 +52,23 @@ function Landing() {
             <div id="cont3" className="cont">
                 <p>원하시는 모임의 특성에 대해 알려주세요.</p>
                 <p>당신께 맞는 모임을 추천드릴게요.</p>
-                <p>(글로모여 업데이트 정보는 덤이에요)</p>
+                <p>(글로모여 업데이트 정보는 덤이에요.)</p>
             </div>
-        {/* <p>당신이 원하는 글 모임은 어떤 모습인가요?</p>
-        <p>글로모여에서 알 수 있어요.</p>
-        <p>원하시는 모임의 특성에 대해 알려주세요.</p>
-        <p>당신께 맞는 모임을 추천드릴게요.</p>
-        <p>(글로모여 업데이트 정보는 덤이에요)</p> */}
-
         </div>
-        <div id="input-area" className="landing-area">
+        <div id="info-area" className="landing-area">
         {/* 정보 입력 영역 */}
-        정보입력 영역입니다.
-
-        <SelectPage />
-        <SelectPage />
-        <input placeholder="정보를 입력하세요."/>
-        <input placeholder="이메일을 입력하세요."/>
-        <button type="submit"> 제출 </button>
+            <div id="info-top">
+                <div id="sel1" className="info-box">
+                <SelectPage data={genderData}/>
+                </div>
+                <div id="sel2" className="info-box">
+                <SelectPage data={ageData}/>
+                </div>
+                <input placeholder="닉네임을 입력하세요." id="nickname" className="info-box"/>
+            </div>
+            <input placeholder="정보를 입력하세요." id="contents" className="info-input"/>
+            <input placeholder="이메일을 입력하세요." id="email" className="info-input"/>
+            <button type="submit" id="submit-btn" className="info-box" onClick={clickedBtn}> 제출 </button>
 
         </div>
       </div>
