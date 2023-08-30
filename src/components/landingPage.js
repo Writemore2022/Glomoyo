@@ -61,8 +61,8 @@ function Landing() {
         setEmail(currentEmail);
     }
 
-    const clickedBtn = () => {
-        alert("You clicked button!");
+    const clickedSubmitBtn = () => {
+        alert("제출이 완료되었습니다.");
         alert("gender: " + gender + "\n" +
               "age: " + age + "\n" +
               "nickname: " + nickname + "\n" +
@@ -112,7 +112,7 @@ function Landing() {
             </div>
             <input placeholder="정보를 입력하세요." id="contents" className="info-input" onChange={onChangeContent}/>
             <input placeholder="이메일을 입력하세요." id="email" className="info-input" onChange={onChangeEmail}/>
-            <button type="submit" id="submit-btn" className="info-box" onClick={clickedBtn}> 제출 </button>
+            <button type="submit" id="submit-btn" className="info-box" onClick={clickedSubmitBtn}> 제출 </button>
 
         </div>
       </div>
