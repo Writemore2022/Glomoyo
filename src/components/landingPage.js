@@ -22,41 +22,53 @@ function Landing() {
         { value: "70대 이상", label: "70대 이상" }
     ];
 
-    const clickedBtn = () => {
-        alert("You clicked button!");
-    }
-
-    /* 수정 필요! (230828)
+    // 수정 필요! (230828)
     // 입력 값 확인
-    const [state, setState] = useState({
-        gender: "",
-        age: "",
-        nickname: "",
-        info: "",
-        email: "",
-    });
+    // const [state, setState] = useState({
+    //     gender: "",
+    //     age: "",
+    //     nickname: "",
+    //     info: "",
+    //     email: "",
+    // });
 
-    const onSubmitData = (data) => {
-        setState(data);
-        console.log(state);
-      };
+    // const onSubmitData = (data) => {
+    //     setState(data);
+    //     console.log(state);
+    //   };
 
     // 초기값 세팅
     const [gender, setGender] = useState("");
     const [age, setAge] = useState("");
     const [nickname, setNickname] = useState("");
-    const [info, setInfo] = useState("");
+    const [content, setContent] = useState("");
     const [email, setEmail] = useState("");
+
+    // 230829 셀렉트 값을 확인할 수 있도록 > gender, age 구현
 
     const onChangeNickname = (e) => {
         const currentNickname = e.target.value;
         setNickname(currentNickname);
     }
 
+    const onChangeContent = (e) => {
+        const currentContent = e.target.value;
+        setContent(currentContent);
+    }
+
     const onChangeEmail = (e) => {
         const currentEmail = e.target.value;
         setEmail(currentEmail);
-    }*/
+    }
+
+    const clickedBtn = () => {
+        alert("You clicked button!");
+        alert("gender: " + gender + "\n" +
+              "age: " + age + "\n" +
+              "nickname: " + nickname + "\n" +
+              "info: " + content + "\n" +
+              "email: " + email);
+    }
 
     return (
       <div className="landing-wrap">
@@ -96,10 +108,10 @@ function Landing() {
                 <div id="sel2" className="info-box">
                 <SelectPage data={ageData}/>
                 </div>
-                <input placeholder="닉네임을 입력하세요." id="nickname" className="info-box"/>
+                <input placeholder="닉네임을 입력하세요." id="nickname" className="info-box" onChange={onChangeNickname}/>
             </div>
-            <input placeholder="정보를 입력하세요." id="contents" className="info-input"/>
-            <input placeholder="이메일을 입력하세요." id="email" className="info-input" />
+            <input placeholder="정보를 입력하세요." id="contents" className="info-input" onChange={onChangeContent}/>
+            <input placeholder="이메일을 입력하세요." id="email" className="info-input" onChange={onChangeEmail}/>
             <button type="submit" id="submit-btn" className="info-box" onClick={clickedBtn}> 제출 </button>
 
         </div>
