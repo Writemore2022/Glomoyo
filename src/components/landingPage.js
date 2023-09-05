@@ -1,8 +1,16 @@
 // 랜딩페이지
 import "../css/landingPage.css"
 import Logo from "../assets/images/logo2.png"
-import SelectPage from "../components/select.js";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import Select from "react-select";
+
+
+// [230905] 멤버 등록 
+const axiosRegisterMember = async(member) => {
+    const res = await axios.post('/member/add/', member)
+    console.log('추가 결과', res)
+}
 
 function Landing() {
 
@@ -22,21 +30,6 @@ function Landing() {
         { value: "70대 이상", label: "70대 이상" }
     ];
 
-    // 수정 필요! (230828)
-    // 입력 값 확인
-    // const [state, setState] = useState({
-    //     gender: "",
-    //     age: "",
-    //     nickname: "",
-    //     info: "",
-    //     email: "",
-    // });
-
-    // const onSubmitData = (data) => {
-    //     setState(data);
-    //     console.log(state);
-    //   };
-
     // 초기값 세팅
     const [gender, setGender] = useState("");
     const [age, setAge] = useState("");
@@ -44,21 +37,26 @@ function Landing() {
     const [content, setContent] = useState("");
     const [email, setEmail] = useState("");
 
-    // 230829 셀렉트 값을 확인할 수 있도록 > gender, age 구현
+    // [230905] select 부분
+    const onChangeGender = (e) => {
+        setGender(e.value);
+    };
+
+    const onChangeAge = (e) => {
+        setAge(e.value);
+    };
+    // ******************************
 
     const onChangeNickname = (e) => {
-        const currentNickname = e.target.value;
-        setNickname(currentNickname);
+        setNickname(e.target.value);
     }
 
     const onChangeContent = (e) => {
-        const currentContent = e.target.value;
-        setContent(currentContent);
+        setContent(e.target.value);
     }
 
     const onChangeEmail = (e) => {
-        const currentEmail = e.target.value;
-        setEmail(currentEmail);
+        setEmail( e.target.value);
     }
 
     const clickedSubmitBtn = () => {
@@ -68,7 +66,42 @@ function Landing() {
               "nickname: " + nickname + "\n" +
               "info: " + content + "\n" +
               "email: " + email);
+
+        // [230905] 제출 값을 DB에 저장하기
+        const member = {gender: gender, age: age, nickname: nickname, information: content, email: email}
+        axiosRegisterMember(member);
     }
+
+
+    // 230901 axios 연결
+    //     useEffect(()=>{
+    //     const getMembers = async() =>{
+    //       const result = await axios.get('/member')
+    //       console.log(result.data[0]);
+    //     }
+    //     getMembers();
+    //   })
+
+    
+
+    
+
+    // [230905] select-style (orange 톤에 맞게)
+    const customStyles = {
+        option: (defaultStyles, state) => ({
+          ...defaultStyles,
+          color: state.isSelected ? "ivory" : "gray",
+          backgroundColor: state.isSelected ? "orange" : "#fff",
+        }),
+    
+        control: (defaultStyles) => ({
+          ...defaultStyles,
+          backgroundColor: "#fff",
+          boxShadow: "none",
+        }),
+        singleValue: (defaultStyles) => ({ ...defaultStyles, color: "gray" }),
+      };
+      // 
 
     return (
       <div className="landing-wrap">
@@ -103,10 +136,10 @@ function Landing() {
         {/* 정보 입력 영역 */}
             <div id="info-top">
                 <div id="sel1" className="info-box">
-                <SelectPage data={genderData}/>
+                <Select options={genderData} onChange={onChangeGender} autoFocus={true} placeholder="성별을 선택하세요." styles={customStyles}/>
                 </div>
                 <div id="sel2" className="info-box">
-                <SelectPage data={ageData}/>
+                <Select options={ageData} onChange={onChangeAge} autoFocus={true} placeholder="나이를 선택하세요." styles={customStyles}/>
                 </div>
                 <input placeholder="닉네임을 입력하세요." id="nickname" className="info-box" onChange={onChangeNickname}/>
             </div>
