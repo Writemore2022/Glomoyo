@@ -72,20 +72,6 @@ function Landing() {
         axiosRegisterMember(member);
     }
 
-
-    // 230901 axios 연결
-    //     useEffect(()=>{
-    //     const getMembers = async() =>{
-    //       const result = await axios.get('/member')
-    //       console.log(result.data[0]);
-    //     }
-    //     getMembers();
-    //   })
-
-    
-
-    
-
     // [230905] select-style (orange 톤에 맞게)
     const customStyles = {
         option: (defaultStyles, state) => ({
