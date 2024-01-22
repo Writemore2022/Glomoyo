@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Glomoyo/static/css/main.ce1e8262.css",
+    "main.js": "/Glomoyo/static/js/main.7739c619.js",
+    "static/js/787.eb6f663b.chunk.js": "/Glomoyo/static/js/787.eb6f663b.chunk.js",
+    "static/media/logo2.png": "/Glomoyo/static/media/logo2.042f61c5d6fccedc99ce.png",
+    "index.html": "/Glomoyo/index.html",
+    "main.ce1e8262.css.map": "/Glomoyo/static/css/main.ce1e8262.css.map",
+    "main.7739c619.js.map": "/Glomoyo/static/js/main.7739c619.js.map",
+    "787.eb6f663b.chunk.js.map": "/Glomoyo/static/js/787.eb6f663b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ce1e8262.css",
+    "static/js/main.7739c619.js"
+  ]
+}
